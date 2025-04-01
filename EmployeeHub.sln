@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "employeehub.client", "employeehub.client\employeehub.client.esproj", "{13467DFC-BCEC-6470-7A56-F791FFCB9E14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeHub.Server", "EmployeeHub.Server\EmployeeHub.Server.csproj", "{76C28DDE-5572-4CB9-8A63-1A7DBECDBAE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13467DFC-BCEC-6470-7A56-F791FFCB9E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13467DFC-BCEC-6470-7A56-F791FFCB9E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13467DFC-BCEC-6470-7A56-F791FFCB9E14}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{13467DFC-BCEC-6470-7A56-F791FFCB9E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13467DFC-BCEC-6470-7A56-F791FFCB9E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13467DFC-BCEC-6470-7A56-F791FFCB9E14}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{76C28DDE-5572-4CB9-8A63-1A7DBECDBAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C28DDE-5572-4CB9-8A63-1A7DBECDBAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C28DDE-5572-4CB9-8A63-1A7DBECDBAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C28DDE-5572-4CB9-8A63-1A7DBECDBAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F672EB13-9AB5-4E5D-98C2-69BF854D95FC}
+	EndGlobalSection
+EndGlobal
