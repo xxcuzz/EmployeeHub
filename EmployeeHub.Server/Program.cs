@@ -18,7 +18,15 @@ public class Program
             new SqlServerConnectionFactory(builder.Configuration["ConnectionString"]!));
         builder.Services.AddSingleton(_ => new DbInitializer(builder.Configuration["ConnectionString"]!));
         builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-
+        builder.Services.AddCors(builder =>
+        {
+            builder.AddPolicy("AllowAll", options =>
+            {
+                options.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
+        });
         var app = builder.Build();
 
         app.UseDefaultFiles();
@@ -47,7 +55,7 @@ public class Program
 
         app.UseHttpsRedirection();
         app.MapFallbackToFile("/index.html");
-
+        app.UseCors("AllowAll");
         var databaseInitializer = app.Services.GetRequiredService<DbInitializer>();
         await databaseInitializer.InitializeAsync();
 

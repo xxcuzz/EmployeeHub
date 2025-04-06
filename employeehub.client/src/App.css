@@ -1,11 +1,33 @@
 ﻿#root {
-    max-width: 1280px;
+    width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+    height: 100vh;
 }
 
 th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+h3 {
+    font-size: 2rem;
+    background: linear-gradient(
+      to right,
+      hsla(0 0% 100% / .1),
+      hsla(0 0% 100% / .1)
+    );
+    background-position: center;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+  }
+
+  
+h3 span {
+    position: relative;
+    padding: 1px 1rem;
+    box-decoration-break: clone;
+    line-height: 1;
+    background-color: oklch(20.5% 0 0);
+  }

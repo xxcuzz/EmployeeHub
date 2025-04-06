@@ -62,11 +62,27 @@ public class EmployeeRepository : IEmployeeRepository
                 WHERE Id IN @Ids
                 """, new { Ids = ids });
     }
+
+    public async Task<EmployeeModel?> GetEmployeeByIdAsync(Guid id, CancellationToken ct)
+    {
+        using var connection = await _db.CreateConnectionAsync(ct);
+
+        var employee = await connection.QueryFirstOrDefaultAsync<EmployeeModel>(
+            """
+            SELECT Id, FirstName, LastName, Age, Sex AS Gender
+                    FROM Employees
+                    WHERE Id = @Id
+            """, new { Id = id });
+
+        return employee;
+    }
 }
 
 public interface IEmployeeRepository
 {
     Task<IEnumerable<EmployeeModel>> GetAllEmployeesAsync(CancellationToken ct);
+
+    Task<EmployeeModel?> GetEmployeeByIdAsync(Guid id, CancellationToken ct);
 
     Task<int> CreateEmployeeAsync(EmployeeModel employee, CancellationToken ct);
 

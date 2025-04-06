@@ -27,8 +27,9 @@ public static class EmployeeMapping
     {
         return new EmployeeResponse(
             employeeModel.Id,
-            $"{employeeModel.FirstName} {employeeModel.LastName}",
-            employeeModel.GetAge(),
+            employeeModel.FirstName,
+            employeeModel.LastName,
+            employeeModel.Age,
             employeeModel.Gender.ToString()
         );
     }
