@@ -1,4 +1,5 @@
 import { EmployeeResponse } from "../Models/EmployeeResponse";
+import { Gender } from "../Models/Gender";
 import { calculateAge } from "../utils/AgeCalculator";
 
 interface EmployeeItemProps {
@@ -13,7 +14,7 @@ interface EmployeeItemProps {
 
 export function EmployeeItem({ employee, deleteEmployee, editEmployee, isSelected, toggleSelect, index }: EmployeeItemProps) {
   const bgColor = index % 2 === 0 ? "bg-neutral-900" : "bg-neutral-800";
-
+  
   return (
     <li className={`flex items-center ${bgColor}`} key={employee.id}>
       <input
@@ -26,7 +27,13 @@ export function EmployeeItem({ employee, deleteEmployee, editEmployee, isSelecte
       <p className="flex-auto basis-md">
         {employee.age ? calculateAge(employee.age) + ' years' : '-'}
       </p>
-      <p className="flex-auto basis-md">{employee.gender}</p>
+      <p className="flex-auto basis-md">
+        {
+          Object.values(Gender).includes(employee.gender as Gender)
+            ? Gender[employee.gender as keyof typeof Gender]
+            : '-'
+        }
+      </p>
       <button className="m-2 items-center justify-center inline-flex bg-transparent hover:bg-emerald-600 text-green-700 font-semibold hover:text-white py-2 px-4 border border-emerald-500 hover:border-transparent rounded-lg"
         onClick={() => editEmployee(employee.id)}>
         Edit
