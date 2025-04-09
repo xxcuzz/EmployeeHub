@@ -9,7 +9,7 @@ import apiRequest from './api/apiRequest.ts';
 import { EmployeeCreate } from './Models/EmployeeCreate.ts';
 
 function App() {
-  const API_URL = "http://localhost:5075/api/Employees";
+  const API_URL = "api/employees";
 
   const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState(false);
