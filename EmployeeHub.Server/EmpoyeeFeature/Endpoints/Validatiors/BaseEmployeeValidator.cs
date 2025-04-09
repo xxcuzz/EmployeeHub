@@ -12,11 +12,19 @@ public class BaseEmployeeValidator : Validator<EmployeeRequest>
     {
         RuleFor(x => x.FirstName)
             .NotEmpty()
-            .WithMessage("First name is required.");
+            .WithMessage("First name is required.")
+            .MinimumLength(2)
+            .WithMessage("First name must be at least 2 characters long.")
+            .MaximumLength(20)
+            .WithMessage("First name must be at most 20 characters long.");
 
         RuleFor(x => x.LastName)
             .NotEmpty()
-            .WithMessage("Last name is required.");
+            .WithMessage("Last name is required.")
+            .MinimumLength(2)
+            .WithMessage("First name must be at least 2 characters long.")
+            .MaximumLength(20)
+            .WithMessage("First name must be at most 20 characters long.");
 
         RuleFor(x => x.Age)
             .Must(BeBetween18And100)
