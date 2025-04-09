@@ -2,6 +2,11 @@
 
 public class EmployeeModel
 {
+    public EmployeeModel()
+    {
+        Id = Guid.NewGuid();
+    }
+
     public Guid Id { get; set; }
 
     public required string FirstName { get; init; }

@@ -15,7 +15,6 @@ public static class EmployeeMapping
 
         return new EmployeeModel
         {
-            Id = Guid.NewGuid(),
             FirstName = employeeRequest.FirstName,
             LastName = employeeRequest.LastName,
             Age = employeeRequest.Age,
